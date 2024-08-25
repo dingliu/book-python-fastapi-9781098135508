@@ -14,6 +14,7 @@ def test_json_dump(data):
     with pytest.raises(Exception):
         _ = json.dumps(data)
 
+
 def test_encoder(data):
     out = jsonable_encoder(data)
     assert out

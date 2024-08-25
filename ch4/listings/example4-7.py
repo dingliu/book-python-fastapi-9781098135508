@@ -8,9 +8,8 @@ from starlette.routing import Route
 async def greeting(request):
     return JSONResponse("Hello World!")
 
-app = Starlette(debug=True, routes=[
-    Route("/hi", greeting)
-])
+
+app = Starlette(debug=True, routes=[Route("/hi", greeting)])
 
 
 if __name__ == "__main__":
