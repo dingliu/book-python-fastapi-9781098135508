@@ -44,6 +44,6 @@ def replace(creature: Creature) -> Creature:
     return creature
 
 
-def delete(name: str):
+def delete(name: str) -> bool | None:
     """delete a creature; return None if it existed"""
     return None
