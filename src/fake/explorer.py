@@ -3,12 +3,8 @@ from model.explorer import Explorer
 
 # fake data, replaced in chapter 10 by real database and SQL
 _explorers = [
-    Explorer(name="Claude Hande",
-             country="FR",
-             description="Scarce during full moons"),
-    Explorer(name="Noah Weiser",
-             country="DE",
-             description="Myopic machete man"),
+    Explorer(name="Claude Hande", country="FR", description="Scarce during full moons"),
+    Explorer(name="Noah Weiser", country="DE", description="Myopic machete man"),
 ]
 
 

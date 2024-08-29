@@ -3,16 +3,20 @@ from model.creature import Creature
 
 # fake data, until we have a real database and sql
 _creatures = [
-    Creature(name="Yeti",
-             aka="Abominable Snowman",
-             country="CN",
-             area="Himalayas",
-             description="Hirsute Himalayan",),
-    Creature(name="Bigfoot",
-             description="Yeti's Cousin Eddie",
-             country="US",
-             area="*",
-             aka="Sasquatch"),
+    Creature(
+        name="Yeti",
+        aka="Abominable Snowman",
+        country="CN",
+        area="Himalayas",
+        description="Hirsute Himalayan",
+    ),
+    Creature(
+        name="Bigfoot",
+        description="Yeti's Cousin Eddie",
+        country="US",
+        area="*",
+        aka="Sasquatch",
+    ),
 ]
 
 

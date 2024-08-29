@@ -2,11 +2,13 @@ from model.creature import Creature
 from service import creature as code
 
 
-sample = Creature(name="Yeti",
-                  aka="Abominable Snowman",
-                  country="CN",
-                  area="Himalayas",
-                  description="Hirsute Himalayan",)
+sample = Creature(
+    name="Yeti",
+    aka="Abominable Snowman",
+    country="CN",
+    area="Himalayas",
+    description="Hirsute Himalayan",
+)
 
 
 def test_create():
