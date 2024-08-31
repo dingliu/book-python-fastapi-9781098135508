@@ -1,11 +1,12 @@
 from fastapi import APIRouter
 from model.explorer import Explorer
-from fake import explorer as service
+from service import explorer as service
 
 
 router = APIRouter(prefix="/explorer")
 
 
+@router.get("")
 @router.get("/")
 def get_all() -> list[Explorer]:
     return service.get_all()
@@ -16,7 +17,7 @@ def get_one(name) -> Explorer | None:
     return service.get_one(name)
 
 
-# all the remaining endpoints do nothing yet.
+@router.post("")
 @router.post("/")
 def create(explorer: Explorer) -> Explorer:
     return service.create(explorer)
@@ -33,5 +34,5 @@ def replace(explorer: Explorer) -> Explorer:
 
 
 @router.delete("/{name}")
-def delete(name: str):
-    return None
+def delete(name: str) -> bool:
+    return service.delete(name)
