@@ -27,7 +27,7 @@ def thing() -> Creature:
         country="RU",
         area="Northern Asia",
         description="For testing",
-        aka="test creature"
+        aka="test creature",
     )
 
 
