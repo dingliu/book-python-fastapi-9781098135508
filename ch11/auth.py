@@ -15,8 +15,7 @@ basic = HTTPBasic()
 
 @app.get("/who")
 def get_user(creds: HTTPBasicCredentials = Depends(basic)) -> dict:
-    if (creds.username == secret_user and
-        creds.password == secret_password):
+    if creds.username == secret_user and creds.password == secret_password:
         return {"username": creds.username, "password": creds.password}
     raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail="Hey!")
 
