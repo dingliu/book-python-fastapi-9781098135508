@@ -1129,6 +1129,31 @@ anyio = ">=3.4.0,<5"
 full = ["httpx (>=0.22.0)", "itsdangerous", "jinja2", "python-multipart (>=0.0.7)", "pyyaml"]
 
 [[package]]
+name = "types-pyasn1"
+version = "0.6.0.20240824"
+description = "Typing stubs for pyasn1"
+optional = false
+python-versions = ">=3.8"
+files = [
+    {file = "types-pyasn1-0.6.0.20240824.tar.gz", hash = "sha256:2cee8bfddf06d88e25ea122f7fb3b9d127a9f4a532e4d1415ef99ee0c2f902ea"},
+    {file = "types_pyasn1-0.6.0.20240824-py3-none-any.whl", hash = "sha256:40873dbd960e8ddb4bebda5195d3aa5e9f9c7c19d461af2f6c8540aa97e8055d"},
+]
+
+[[package]]
+name = "types-python-jose"
+version = "3.3.4.20240106"
+description = "Typing stubs for python-jose"
+optional = false
+python-versions = ">=3.8"
+files = [
+    {file = "types-python-jose-3.3.4.20240106.tar.gz", hash = "sha256:b18cf8c5080bbfe1ef7c3b707986435d9efca3e90889acb6a06f65e06bc3405a"},
+    {file = "types_python_jose-3.3.4.20240106-py3-none-any.whl", hash = "sha256:b515a6c0c61f5e2a53bc93e3a2b024cbd42563e2e19cbde9fd1c2cc2cfe77ccc"},
+]
+
+[package.dependencies]
+types-pyasn1 = "*"
+
+[[package]]
 name = "types-requests"
 version = "2.32.0.20240712"
 description = "Typing stubs for requests"
@@ -1191,4 +1216,4 @@ standard = ["colorama (>=0.4)", "httptools (>=0.5.0)", "python-dotenv (>=0.13)",
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.12"
-content-hash = "3e78313076f5e02ebf38ca68e3480a4703659b50168cc0891c04c95dd5e24451"
+content-hash = "cf7111edca0a2eca5c81e79b9aa2775409970da9dabe9d8eead5415bbfe1e3d6"
