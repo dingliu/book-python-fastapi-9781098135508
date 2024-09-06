@@ -80,7 +80,7 @@ def test_replace_missing(sample):
 
 
 def test_delete(fakes):
-    assert creature.delete(fakes[0].name) is None
+    assert creature.delete(fakes[0].name) == True
 
 
 def test_delete_missing(sample):

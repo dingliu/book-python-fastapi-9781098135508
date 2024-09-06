@@ -62,7 +62,7 @@ def replace(creature: Creature) -> Creature:
     return creature
 
 
-def delete(name: str) -> bool | None:
+def delete(name: str) -> bool:
     """delete a creature; return None if it existed"""
     check_missing(name, _creatures)
-    return None
+    return True
