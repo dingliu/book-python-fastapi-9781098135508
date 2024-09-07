@@ -1,5 +1,11 @@
 from model.creature import Creature
-import data.creature as data
+
+# double/fake for testing
+import os
+if os.environ.get("CRYPTID_UNIT_TEST", ""):
+    import fake.creature as data
+else:
+    import data.creature as data
 
 
 def get_all() -> list[Creature]:
