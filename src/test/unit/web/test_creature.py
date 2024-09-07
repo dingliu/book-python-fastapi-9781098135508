@@ -1,6 +1,7 @@
 import pytest
 from fastapi import HTTPException, status
 from model.creature import Creature
+from test.utils import assert_duplicate, assert_missing
 
 # use double/fake for testing
 import os
@@ -20,20 +21,6 @@ def sample() -> Creature:
 @pytest.fixture
 def fakes() -> list[Creature]:
     return creature.get_all()
-
-
-# ===============
-# helper funcs
-# ===============
-def assert_duplicate(e: HTTPException):
-    assert e.status_code == status.HTTP_409_CONFLICT
-    assert "Duplicate" in e.args
-
-
-def assert_missing(e: HTTPException):
-    assert e.status_code == status.HTTP_404_NOT_FOUND
-    assert "Missing" in e.args
-
 
 
 # ==============
