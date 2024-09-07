@@ -48,7 +48,7 @@ def replace(explorer: Explorer) -> Explorer:
     return explorer
 
 
-def delete(explorer: Explorer) -> bool:
+def delete(name: str) -> bool:
     """Delete an explorer; return None if existed"""
-    check_missing(explorer.name, _explorers)
+    check_missing(name, _explorers)
     return True
