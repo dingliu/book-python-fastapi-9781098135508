@@ -1,11 +1,21 @@
 from model.explorer import Explorer
+from error import MissingError, DuplicateError
 
 
-# fake data, replaced in chapter 10 by real database and SQL
 _explorers = [
     Explorer(name="Claude Hande", country="FR", description="Scarce during full moons"),
     Explorer(name="Noah Weiser", country="DE", description="Myopic machete man"),
 ]
+
+
+def check_missing(name: str, explorers: list[Explorer]):
+    if name not in [explorer.name for explorer in explorers]:
+        raise MissingError(msg=f"Explorer {name} not found.")
+
+
+def check_duplicate(name: str, explorers: list[Explorer]):
+    if name in [explorer.name for explorer in explorers]:
+        raise DuplicateError(msg=f"Explorer {name} already exists.")
 
 
 def get_all() -> list[Explorer]:
@@ -13,31 +23,32 @@ def get_all() -> list[Explorer]:
     return _explorers
 
 
-def get_one(name: str) -> Explorer | None:
+def get_one(name: str) -> Explorer:
     for _explorer in _explorers:
         if _explorer.name == name:
             return _explorer
-    return None
+    raise MissingError(msg=f"Explorer {name} not found.")
 
 
-# The following are nonfunctional for now,
-# so they just act like they work, without modifying
-# the actual fake _explorers list:
 def create(explorer: Explorer) -> Explorer:
     """Add an explorer"""
+    check_duplicate(explorer.name, _explorers)
     return explorer
 
 
 def modify(explorer: Explorer) -> Explorer:
     """Partially modify an explorer"""
+    check_missing(explorer.name, _explorers)
     return explorer
 
 
 def replace(explorer: Explorer) -> Explorer:
     """Completely replace an explorer"""
+    check_missing(explorer.name, _explorers)
     return explorer
 
 
-def delete(explorer: Explorer) -> bool | None:
+def delete(explorer: Explorer) -> bool:
     """Delete an explorer; return None if existed"""
-    return None
+    check_missing(explorer.name, _explorers)
+    return True

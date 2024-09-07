@@ -23,7 +23,7 @@ def get_one(name) -> Creature | None:
     try:
         return service.get_one(name)
     except MissingError as exc:
-        raise HTTPException(status_code=404, detail=exc.msg)
+        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail=exc.msg)
 
 
 @router.post("", status_code=status.HTTP_201_CREATED)

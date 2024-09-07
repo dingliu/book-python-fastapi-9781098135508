@@ -45,8 +45,8 @@ def test_create(sample):
 
 def test_create_duplicate(fakes):
     with pytest.raises(HTTPException) as e:
-        _ = creature.create(fakes[0])
-        assert_duplicate(e)
+        creature.create(fakes[0])
+        assert_duplicate(e.value)
 
 
 def test_get_one(fakes):
@@ -56,7 +56,7 @@ def test_get_one(fakes):
 def test_get_one_missing(sample):
     with pytest.raises(HTTPException) as e:
         creature.get_one(sample)
-        assert_missing(e)
+        assert_missing(e.value)
 
 
 def test_modify(fakes):
@@ -66,7 +66,7 @@ def test_modify(fakes):
 def test_modify_missing(sample):
     with pytest.raises(HTTPException) as e:
         creature.modify(sample)
-        assert_missing(e)
+        assert_missing(e.value)
 
 
 def test_replace(fakes):
@@ -76,7 +76,7 @@ def test_replace(fakes):
 def test_replace_missing(sample):
     with pytest.raises(HTTPException) as e:
         creature.replace(sample)
-        assert_missing(e)
+        assert_missing(e.value)
 
 
 def test_delete(fakes):
@@ -86,4 +86,4 @@ def test_delete(fakes):
 def test_delete_missing(sample):
     with pytest.raises(HTTPException) as e:
         creature.delete(sample.name)
-        assert_missing(e)
+        assert_missing(e.value)
