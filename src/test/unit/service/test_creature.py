@@ -44,3 +44,21 @@ def test_get_one(fakes):
 def test_get_one_missing(sample):
     with pytest.raises(MissingError):
         creature.get_one(sample.name)
+
+
+def test_modify(fakes):
+    assert creature.modify(fakes[0]) == fakes[0]
+
+
+def test_modify_missing(sample):
+    with pytest.raises(MissingError):
+        creature.modify(sample)
+
+
+def test_delete(fakes):
+    assert creature.delete(fakes[0].name) == True
+
+
+def test_delete_missing(sample):
+    with pytest.raises(MissingError):
+        creature.delete(sample.name)
