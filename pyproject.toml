@@ -27,6 +27,8 @@ types-passlib = "^1.7.7.20240819"
 
 [tool.poetry.group.test.dependencies]
 pytest = "^8.3.2"
+hypothesis = "^6.112.0"
+schemathesis = "^3.35.4"
 
 [build-system]
 requires = ["poetry-core"]
